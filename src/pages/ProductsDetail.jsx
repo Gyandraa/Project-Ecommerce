@@ -7,7 +7,6 @@ export default function ProductsDetail() {
 
   const [product, setProduct] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [items, setItems] = useState([]);
 
   const Products = [
     {
@@ -27,6 +26,15 @@ export default function ProductsDetail() {
       category: "kemeja",
       deksripsi:
         "Kemeja oblang memiliki desain yang unik dan kekinian yang cocok dikalangan usia",
+    },
+    {
+      id: 3,
+      name: "Kemeja Kekinian",
+      harga: 15000,
+      images: "../../public/images/kemeja.jpg",
+      category: "kemeja",
+      deksripsi:
+        "Kemeja Keknian memiliki desain yang unik dan kekinian yang cocok dikalangan usia",
     },
     {
       id: 3,
@@ -57,9 +65,9 @@ export default function ProductsDetail() {
   ];
 
   const addToCart = (product) => {
-    const exist = JSON.parse(localStorage.getItem("CartItems")) || [];
+    const getIdItem = JSON.parse(localStorage.getItem("CartItems")) || [];
 
-    const updatedItems = [...exist, product];
+    const updatedItems = [...getIdItem, product];
 
     localStorage.setItem("CartItems", JSON.stringify(updatedItems));
 
@@ -72,6 +80,7 @@ export default function ProductsDetail() {
     const found = Products.find((p) => p.id === Number(id));
     setProduct(found);
 
+    // ini memfilter produk yang sama berdasarkan categorynya
     if (found) {
       const sameCategory = Products.filter(
         (p) => p.category === found.category && p.id !== found.id
@@ -79,8 +88,6 @@ export default function ProductsDetail() {
       setFilteredProducts(sameCategory);
     }
   }, [id]);
-
-  if (!product) return <p>Loading...</p>;
 
   return (
     <>
@@ -122,20 +129,25 @@ export default function ProductsDetail() {
             Produk yang Sama
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 p-5 justify-items-center">
             {filteredProducts.map((item) => (
-              <div key={item.id} className="bg-white rounded-xl shadow-md p-3">
+              <div
+                key={item.id}
+                className="bg-white rounded-xl shadow-md p-3 inline-flex flex-col w-fit"
+              >
                 <img
                   src={item.images}
+                  alt={item.name}
                   className="w-56 h-48 object-cover rounded-xl"
                 />
-                <h3 className="font-semibold mt-2">{item.name}</h3>
 
-                <p>Rp {item.harga.toLocaleString()}</p>
+                <h3 className="font-semibold mt-2 text-center">{item.name}</h3>
+
+                <p className="text-center">Rp {item.harga.toLocaleString()}</p>
 
                 <button
                   onClick={() => navigate(`/productsdetail/${item.id}`)}
-                  className="w-full mt-2 bg-cyan-900  hover:bg-teal-700 text-white py-1.5 rounded-lg"
+                  className="w-56 mt-2 bg-cyan-900 hover:bg-teal-700 text-white py-1.5 rounded-lg"
                 >
                   Lihat Detail
                 </button>

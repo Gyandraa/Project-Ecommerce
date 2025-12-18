@@ -61,7 +61,7 @@ export default function ProductCard({ showTitle = true }) {
 
               <button
                 onClick={() => navigate(`/productsdetail/${product.id}`)}
-                className="w-full bg-cyan-950 text-white py-1.5 rounded-lg transition-all duration-300 text-sm font-semibold"
+                className="w-full bg-cyan-900 hover:bg-teal-700 text-white py-1.5 rounded-lg transition-all duration-300 text-sm font-semibold"
               >
                 Lihat Detail
               </button>
