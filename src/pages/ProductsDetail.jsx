@@ -7,6 +7,7 @@ export default function ProductsDetail() {
 
   const [product, setProduct] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [items, setItems] = useState([]);
 
   const Products = [
     {
@@ -55,6 +56,18 @@ export default function ProductsDetail() {
     },
   ];
 
+  const addToCart = (product) => {
+    const exist = JSON.parse(localStorage.getItem("CartItems")) || [];
+
+    const updatedItems = [...exist, product];
+
+    localStorage.setItem("CartItems", JSON.stringify(updatedItems));
+
+    alert("produk berhasil ditambahkan ke keranjang", updatedItems);
+
+    console.log("item suscces add to localstorage", updatedItems);
+  };
+
   useEffect(() => {
     const found = Products.find((p) => p.id === Number(id));
     setProduct(found);
@@ -88,7 +101,10 @@ export default function ProductsDetail() {
             <button className="w-32 bg-cyan-950  hover:bg-teal-700 text-white py-1.5 rounded-lg">
               Buy
             </button>
-            <button className="w-20 ml-2 bg-teal-900  hover:bg-teal-700 text-white py-1.5 rounded-lg">
+            <button
+              onClick={() => addToCart(product)}
+              className="w-20 ml-2 bg-teal-900  hover:bg-teal-700 text-white py-1.5 rounded-lg"
+            >
               🛒
             </button>
           </div>

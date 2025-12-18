@@ -44,7 +44,7 @@ export default function Footer() {
                   <span className="text-teal-400 mr-3 text-lg">📧</span>
                   <p>
                     <span className="font-semibold">Email:</span>{" "}
-                    info@smanja.sch.id
+                    MicaStore@gmail.com
                   </p>
                 </div>
               </div>
@@ -56,11 +56,11 @@ export default function Footer() {
               </h3>
               <div className="w-full">
                 <iframe
-                  title="Peta Lokasi SMAN 1 Jatinangor"
+                  title="Peta Lokasi MicaStore"
                   width="100%"
                   height="200"
                   className="rounded-xl shadow-xl border-2 border-teal-500"
-                  src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=sma%20negri%20jatinangor+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                  src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Jatinangor%20jonas+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

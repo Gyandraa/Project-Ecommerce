@@ -1,6 +1,7 @@
 import ProductCard from "../components/ProductCard";
 import Banner from "../../public/images/Banner.jpg";
 import AboutUs from "./AboutUs";
+import Footer from "../components/Footer.jsx";
 export default function HomePage() {
   return (
     <>
@@ -37,6 +38,7 @@ export default function HomePage() {
         </div>
       </section>
       <AboutUs />
+      <Footer />
     </>
   );
 }
