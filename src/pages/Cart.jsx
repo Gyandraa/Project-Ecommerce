@@ -18,6 +18,8 @@ export default function Cart() {
     localStorage.setItem("CartItems", JSON.stringify(updatedItems));
   };
 
+  const totalharga = cartItems.reduce((total, item) => total + item.harga, 0);
+
   return (
     <div className="max-w-4xl mx-auto mt-20 px-4">
       <h1 className="text-3xl font-semibold text-center mb-8">🛒 Cart Pages</h1>
@@ -26,9 +28,9 @@ export default function Cart() {
         <p className="text-center text-gray-500">Keranjang masih kosong</p>
       ) : (
         <ul className="space-y-4">
-          {cartItems.map((item, index) => (
+          {cartItems.map((item) => (
             <li
-              key={index}
+              key={item.id}
               className="flex items-center justify-between bg-white shadow-md rounded-xl p-4"
             >
               <div className="flex items-center gap-4">
@@ -46,24 +48,44 @@ export default function Cart() {
               </div>
 
               <div className="flex gap-3 mt-3">
+                {/* <button
+                  onClick={() => addQty(item.id)}
+                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                >
+                  +
+                </button>
+
+                <button
+                  onClick={() => deleteQty(item.id)}
+                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                >
+                  -
+                </button> */}
+
                 <button
                   onClick={() => removeItems(item.id)}
                   className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
                 >
                   Remove
                 </button>
-
-                <button
-                  onClick={() => {}}
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
-                >
-                  Checkout
-                </button>
               </div>
             </li>
           ))}
         </ul>
       )}
+      <div>
+        <div className="flex border-t-2 mt-8 pt-4 justify-between items-center">
+          <h2 className="text-2xl font-semibold mt-8">
+            Total Harga: Rp {totalharga.toLocaleString()}
+          </h2>
+          <button
+            onClick={() => {}}
+            className="mt-8 ml-4 bg-green-500 hover:bg-green-900 text-white px-6 py-2 rounded-lg text-sm font-medium transition"
+          >
+            Checkout
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

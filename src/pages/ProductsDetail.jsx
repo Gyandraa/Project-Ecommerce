@@ -30,7 +30,7 @@ export default function ProductsDetail() {
     {
       id: 3,
       name: "Kemeja Kekinian",
-      harga: 15000,
+      harga: 25000,
       images: "/images/kemeja.jpg",
       category: "kemeja",
       deksripsi: "Kemeja kekinian dengan desain modern dan stylish",
@@ -63,11 +63,15 @@ export default function ProductsDetail() {
   ];
 
   const addToCart = (product) => {
-    const cart = JSON.parse(localStorage.getItem("CartItems")) || [];
+    const storedCart = JSON.parse(localStorage.getItem("CartItems"));
+
+    const cart = Array.isArray(storedCart) ? storedCart : [];
+
     localStorage.setItem("CartItems", JSON.stringify([...cart, product]));
-    const Timeout = setTimeout(() => {
-      alert("Berhasil ditambahkan", Timeout)
-    }, 1000)
+
+    setTimeout(() => {
+      alert("Berhasil ditambahkan");
+    }, 500);
   };
 
   useEffect(() => {
