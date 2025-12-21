@@ -14,11 +14,11 @@ export default function Navbar() {
             <Link className="hover:text-teal-400 transition" to="/">
               Home
             </Link>
-            <Link className="hover:bg-teal-400 transition" to="/cart">
-              🛒
-            </Link>
             <Link className="hover:text-teal-400 transition" to="/product">
               Product
+            </Link>
+            <Link className=" transition" to="/cart">
+              🛒
             </Link>
           </div>
           <button
@@ -43,17 +43,17 @@ export default function Navbar() {
               Home
             </Link>
             <Link
+            onClick={() => setOpen(false)}
+            className="hover:bg-teal-400 transition"
+            to="/product">
+              Product
+            </Link>
+            <Link
               onClick={() => setOpen(false)}
               className="hover:bg-teal-700/20 transition"
               to="/cart"
             >
               🛒
-            </Link>
-            <Link
-            onClick={() => setOpen(false)}
-            className="hover:bg-teal-400 transition"
-            to="/product">
-              Product
             </Link>
           </div>
         </div>

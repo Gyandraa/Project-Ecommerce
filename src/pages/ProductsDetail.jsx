@@ -65,7 +65,9 @@ export default function ProductsDetail() {
   const addToCart = (product) => {
     const cart = JSON.parse(localStorage.getItem("CartItems")) || [];
     localStorage.setItem("CartItems", JSON.stringify([...cart, product]));
-    alert("Produk berhasil ditambahkan ke keranjang");
+    const Timeout = setTimeout(() => {
+      alert("Berhasil ditambahkan", Timeout)
+    }, 1000)
   };
 
   useEffect(() => {
