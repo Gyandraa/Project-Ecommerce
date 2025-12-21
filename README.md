@@ -20,10 +20,11 @@ Sebuah aplikasi **E-Commerce**, Project ini dibuat sebagai latihan dan portfolio
   - Menghapus produk dari keranjang
 ---
 
-
 ## 🛠 Tech Stack
 
 - **HTML**
 - **React JS**
 - **JavaScript (ES6+)**
 - **CSS / Tailwind CSS**
+
+---

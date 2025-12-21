@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function ProductCard({ showTitle = true }) {
   const navigate = useNavigate();
@@ -37,7 +38,8 @@ export default function ProductCard({ showTitle = true }) {
   ];
 
   return (
-    <section className="p-5 px-25 mt-8 mb-5">
+    <>
+    <section className="p-5 px-25 mt-8 mb-5 ">
       {showTitle && (
         <h2 className="p-10 text-center text-3xl font-bold">Products</h2>
       )}
@@ -70,5 +72,6 @@ export default function ProductCard({ showTitle = true }) {
         ))}
       </div>
     </section>
+    </>
   );
 }

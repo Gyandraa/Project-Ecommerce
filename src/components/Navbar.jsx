@@ -17,6 +17,9 @@ export default function Navbar() {
             <Link className="hover:bg-teal-400 transition" to="/cart">
               🛒
             </Link>
+            <Link className="hover:text-teal-400 transition" to="/product">
+              Product
+            </Link>
           </div>
           <button
             className="md:hidden text-white text-3xl"
@@ -45,6 +48,12 @@ export default function Navbar() {
               to="/cart"
             >
               🛒
+            </Link>
+            <Link
+            onClick={() => setOpen(false)}
+            className="hover:bg-teal-400 transition"
+            to="/product">
+              Product
             </Link>
           </div>
         </div>

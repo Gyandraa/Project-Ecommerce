@@ -29,12 +29,9 @@ export default function HomePage() {
 
       <section>
         <div>
-          <h1 className="text-center text-3xl font-sans mt-10 font-bold">
+          {/* <h1 className="text-center text-3xl font-sans mt-10 font-bold">
             Products
-          </h1>
-          <div>
-            <ProductCard showTitle={false} />
-          </div>
+          </h1> */}
         </div>
       </section>
       <AboutUs />
