@@ -8,13 +8,13 @@ export default function Navbar() {
     <>
       <nav className="fixed top-0 left-0 w-full bg-black/20 backdrop-blur-md z-50">
         <div className="max-w-6xl mx-auto  py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-semibold text-white">Micastore</h1>
+          <h1 className="text-2xl font-bold text-black">Micastore</h1>
 
-          <div className="hidden md:flex space-x-8 text-white font-semibold text-lg">
+          <div className="hidden md:flex space-x-8 text-black font-semibold text-lg">
             <Link className="hover:text-teal-400 transition" to="/">
               Home
             </Link>
-            <Link className="hover:text-teal-400 transition" to="/cart">
+            <Link className="hover:bg-teal-400 transition" to="/cart">
               🛒
             </Link>
           </div>
@@ -41,7 +41,7 @@ export default function Navbar() {
             </Link>
             <Link
               onClick={() => setOpen(false)}
-              className="hover:text-teal-300 transition"
+              className="hover:bg-teal-700/20 transition"
               to="/cart"
             >
               🛒

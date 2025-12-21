@@ -11,6 +11,7 @@ export default function Cart() {
     }
   }, []);
 
+  //menghapus item dari cart berdasarkan id item tersebut
   const removeItems = (removeItemsId) => {
     const updatedItems = cartItems.filter((item) => item.id !== removeItemsId);
     setCartItems(updatedItems);
@@ -44,12 +45,21 @@ export default function Cart() {
                 </div>
               </div>
 
-              <button
-                onClick={() => removeItems(item.id)}
-                className="bg-red-500 hover:bg-red-800 text-white px-4 py-2 rounded-lg text-sm transition"
-              >
-                Remove
-              </button>
+              <div className="flex gap-3 mt-3">
+                <button
+                  onClick={() => removeItems(item.id)}
+                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                >
+                  Remove
+                </button>
+
+                <button
+                  onClick={() => {}}
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                >
+                  Checkout
+                </button>
+              </div>
             </li>
           ))}
         </ul>
